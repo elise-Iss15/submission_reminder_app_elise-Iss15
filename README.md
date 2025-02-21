@@ -1,63 +1,59 @@
-# submission_reminder_app_Elise-Iss15
+# Submission Reminder App
 
-## Overview
-This app is built to help educators follow up with students' submissions for their assignments and send reminders to those who haven't submitted their work. The app creates a directory structure with necessary files and scripts to facilitate the process.
+This App will enable facilitators keep track of assignment  submissions and help them to know  those who haven't submitted their work yet.
 
-## Directory Structure
-submission_reminder_<username>/ ├── app/ │ └── reminder.sh ├── modules/ │ └── functions.sh ├── assets/ │ └── submissions.txt ├── config/ │ └── config.env └── startup.sh
+## Installation & Setup
 
-bash
-Copy
-Edit
+1. Clone the repository (if applicable) or download the script.
+2. Run the `create_environment.sh` script to generate the required directory structure and files:
+   ```bash
+   chmod +x create_environment.sh
+   ./create_environment.sh
+   ```
 
-## Installation
-1. Run the provided bash script to set up the directory structure and necessary files:
-    ```bash
-    ./setup.sh
-    ```
-## Use
+## Directory Structure(how the directory is built)# Submission Reminder App
 
-### Provide your name
-When you run the setup script, it will ask your surname to personalize the directory:
-`` `Bash
-Echo "Enter your name:"
-Read user_name
-create directory
-Script Submission_reminder_ <User_name> will make a directory:
+This App will enable facilitators keep track of assignment  submissions and help them to know  those who haven't submitted their work yet.
 
-Bash
-Copy
-edit
-Parent_Dir = "Submission_minder _ $ {name}"
-Mkdir -P $ Dir/
-Startup script
-Navigate on submission_reminder_ <User_name> Directory.
-Run Startup.Sh Script to start the reminder app when executed: Run:
-Bash
-Copy
-edit
-./startup.sh
-Reminder script (reminder.
-The reminder .SH script app is located in the subductory.
-It reads environmental variables and supportive functions, prints the remaining time, and runs the Check_Submissions function.
-Bash
-Copy
-edit
-./app/reminder.sh
-Functions script (function.)
-Functions.Sh script module is located in the subductory.
-This includes check_submission function, which reads submission.
-Bash
-Copy
-edit
-./Modules/functions.sh
-Configuration file (config.env)
-Config.env file is located in Config Subdirectory.
-This includes the name of the assignment and the number of remaining days for submission:
-Bash
-Copy
-edit
-Assignment = "Shell Navigation"
-Days_remaining = 2
-Submission file
-Submission.TXT file assets are located in the subductory.
+README.md  create_environment.sh*  startup.sh*  submission_reminder_Elyse/
+
+./submission_reminder_Elyse:
+app/  assets/  config/  modules/
+
+./submission_reminder_Elyse/app:
+reminder.sh*
+
+./submission_reminder_Elyse/assets:
+submissions.txt
+
+./submission_reminder_Elyse/config:
+config.env
+
+./submission_reminder_Elyse/modules:
+functions.sh*
+
+
+## Running the Application
+
+1. Navigate to the newly created directory:
+   ```bash
+   cd submission_reminder_<your_username>/
+   ```
+2. Run the startup script:
+   ```bash
+   ./startup.sh
+   ```
+
+## Features
+
+Reminder Script (********`reminder.sh`********)**: Reads envirnment variables and student submission data, then sends reminders to students who haven’t submitted.
+Functions Script (********`functions.sh`********)**: Contains helper functions, including `check_submissions`, which checks `submissions.txt` for incomplete submissions.
+Configuration File (********`config.env`********)**: Stores the assignment name and submission deadline.
+
+## Example Data (`submissions.txt`)
+Elyse, python, not submitted
+Ifeomelu, Git, submitted
+Kelly, Shell Navigation, not submitted
+  
+
+
