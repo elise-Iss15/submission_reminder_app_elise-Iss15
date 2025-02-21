@@ -1,11 +1,12 @@
 #!/bin/bash
-# Start the reminder application
+# Starting the environment variables and ensuring they are ready
 
 echo "Starting the Submission_reminder_app ......."
 
-# Check for required files
+# Checking if the config.env and functions are ready
+
 if [ ! -f "./config/config.env" ]; then
-    echo "Error: config.env not found. Please make sure it's in the config/ directory."
+    echo  "Error: config.env not found. Please make sure it's in the config/ directory."
     exit 1
 fi
 
@@ -14,18 +15,23 @@ if [ ! -f "./modules/functions.sh" ]; then
     exit 1
 fi
 
-# Source configuration and functions
+# These are sources for config and functions
+
 source ./config/config.env
 source ./modules/functions.sh
 
-# Check if submissions.txt exists
+# Checking if submissions.txt exists
+
 if [ ! -f "./assets/submissions.txt" ]; then
     echo "Error: submissions.txt not found in the assets/ directory."
     exit 1
 fi
 
-# Executing the reminder application
-echo "Starting Submission_reminder_app..."
+# Executing submission_reminder_app (by calling reminder.sh)
 
-bash ./app/reminder.sh
+echo "Submission_reminder_app is starting now ..."
+
+# Correcting the script execution path
+bash ./app/reminder.sh  # Ensure this path is correct
+
 

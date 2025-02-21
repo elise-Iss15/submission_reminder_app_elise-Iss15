@@ -20,6 +20,7 @@ for subdir in app modules assets config; do
 done
 
 #create files inside subdirectories
+
 touch config/config.env
 touch modules/functions.sh
 touch assets/submissions.txt
@@ -43,8 +44,9 @@ for file in reminder.sh functions.sh submissions.txt config.env; do
 done
 
 # Ensure scripts are executable
-chmod u+x app/reminder.sh modules/functions.sh
+chmod u+x app/reminder.sh modules/functions.sh config/config.env
+
 
 # Confirm successful setup
-echo "Submission reminder app setup completed successfully in directory: $submission_reminder_app"
+echo "Submission reminder app setup completed successfully in directory: $submission_reminder_ap"
 
