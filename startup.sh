@@ -3,35 +3,49 @@
 
 echo "Starting the Submission_reminder_app ......."
 
-# Checking if the config.env and functions are ready
+# Define the project root (modify if needed)
+PROJECT_ROOT="$(pwd)"
 
-if [ ! -f "./config/config.env" ]; then
-    echo  "Error: config.env not found. Please make sure it's in the config/ directory."
+# Checking if the config.env and functions.sh are ready
+CONFIG_FILE="$PROJECT_ROOT/submission_reminder_Elyse/config/config.env"
+FUNCTIONS_FILE="$PROJECT_ROOT/submission_reminder_Elyse/modules/functions.sh"
+SUBMISSIONS_FILE="$PROJECT_ROOT/submission_reminder_Elyse/assets/submissions.txt"
+REMINDER_SCRIPT="$PROJECT_ROOT/submission_reminder_Elyse/app/reminder.sh"
+
+#checking if config.env exists
+echo "Checking for: $CONFIG_FILE"
+
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Error: config.env not found at $CONFIG_FILE."
     exit 1
 fi
 
-if [ ! -f "./modules/functions.sh" ]; then
-    echo "Error: functions.sh not found. Please make sure it's in the modules/ directory."
+# define sources for config
+source "$CONFIG_FILE"
+
+#load config.env
+echo "config.env loaded successfully."
+
+#checking if functions.sh exists
+echo "Checking for: $FUNCTIONS_FILE"
+
+if [ ! -f "$FUNCTIONS_FILE" ]; then
+    echo "Error: functions.sh not found in the modules/ directory."
     exit 1
 fi
 
-# These are sources for config and functions
+# define sources for functions.sh
+source "$FUNCTIONS_FILE"
 
-source ./config/config.env
-source ./modules/functions.sh
+#checking if submissions.txt exists
+echo "Checking for: $SUBMISSIONS_FILE"
 
-# Checking if submissions.txt exists
-
-if [ ! -f "./assets/submissions.txt" ]; then
+if [ ! -f "$SUBMISSIONS_FILE" ]; then
     echo "Error: submissions.txt not found in the assets/ directory."
     exit 1
 fi
 
 # Executing submission_reminder_app (by calling reminder.sh)
-
 echo "Submission_reminder_app is starting now ..."
-
-# Correcting the script execution path
-bash ./app/reminder.sh  # Ensure this path is correct
-
+bash "$REMINDER_SCRIPT"
 

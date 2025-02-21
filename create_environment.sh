@@ -1,12 +1,12 @@
 #!/bin/bash
 # This script sets up a submission reminder application.
 
-# Ask for user's name and remove spaces to avoid directory name issues.
+# Asking for the username.
 echo "Enter your name:"
 read -r user_name
 user_name=$(echo "$user_name" | tr -d ' ')
 
-# Define the parent directory dynamically
+# Define the directory 
 submission_reminder_app="submission_reminder_${user_name}"
 mkdir -p "$submission_reminder_app"
 
@@ -43,10 +43,10 @@ for file in reminder.sh functions.sh submissions.txt config.env; do
     fi
 done
 
-# Ensure scripts are executable
+# Making the scripts executable
 chmod u+x app/reminder.sh modules/functions.sh config/config.env
 
 
-# Confirm successful setup
-echo "Submission reminder app setup completed successfully in directory: $submission_reminder_ap"
+# the text that confirms the successful set up submission_reminder_app
+echo "Submission reminder app setup completed successfully in directory: $submission_reminder_app"
 
