@@ -50,7 +50,6 @@ Configuration File (config.env): Stores the assignment name and submission deadl
 
 
 ## Example Data (`submissions.txt`)
-Ishimwe, python, not submitted
 Ifeomelu, Git, submitted
 Kelly, Shell Navigation, not submitted
   
